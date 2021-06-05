@@ -6,13 +6,13 @@ import './App.css';
 class App extends Component {
 
   handleOnClickItems() {
-    this.props.dispatch({
+    this.props.store.dispatch({
       type: 'GET_COUNT_OF_ITEMS',
     });
   }
 
   handleOnClickUsers() {
-    this.props.dispatch({
+    this.props.store.dispatch({
       type: 'GET_COUNT_OF_USERS',
     });
   }
@@ -30,11 +30,12 @@ class App extends Component {
           <p>{this.props.items.length}</p>
       </div>
     );
+  
   }
 }
 
 const mapStateToProps = (state) => {
-  debugger;
+
   return { items: state.items }
 }
 
